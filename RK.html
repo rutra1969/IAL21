@@ -1,0 +1,96 @@
+<!DOCTYPE html>  
+<html lang="sk">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Realitná Kancelária</title>  
+    <style>  
+        body {  
+            font-family: Arial, sans-serif;  
+            background-color: #f0f8ff;  
+            color: #003366;  
+            margin: 0;  
+            padding: 0;  
+        }  
+        header {  
+            background-color: #003366;  
+            color: white;  
+            padding: 10px 20px;  
+            text-align: center;  
+        }  
+        nav {  
+            margin: 20px 0;
+	    color: white;  
+        }  
+        nav a {  
+            margin: 0 15px;  
+            color: #003366;  
+            text-decoration: none;  
+        }  
+        section {  
+            padding: 20px;  
+        }  
+        footer {  
+            text-align: center;  
+            padding: 10px 0;  
+            background-color: #003366;  
+            color: white;  
+            position: relative;  
+            bottom: 0;  
+            width: 100%;  
+        }  
+    </style>  
+</head>  
+<body>  
+
+<header>  
+    <h1>Realitná Kancelária</h1>  
+    <nav>  
+        <a href="#sk">Slovenčina</a>  
+        <a href="#sr">Српски</a>  
+    </nav>  
+</header>  
+
+<section id="sk">  
+    <h2>O nás</h2>  
+    <p>Naša realitná kancelária ponúka široký výber nehnuteľností na predaj a prenájom. Sme tu, aby sme vám pomohli nájsť váš vysnívaný domov.</p>  
+    
+    <h2>Kontakty</h2>  
+    <p>Email: info@realitnakancelaria.sk</p>  
+    <p>Telefón: +421 123 456 789</p>  
+</section>  
+
+<section id="sr" style="display:none;">  
+    <h2>О нама</h2>  
+    <p>Наша агенција за некретнине нуди широк избор некретнина за продају и изнајмљивање. Ту смо да вам помогнемо да пронађете ваш дом из снова.</p>  
+    
+    <h2>Контакти</h2>  
+    <p>Email: info@realitnakancelaria.rs</p>  
+    <p>Телефон: +381 123 456 789</p>  
+</section>  
+
+<footer>  
+    <p>&copy; 2024 Realitná Kancelária</p>  
+</footer>  
+
+<script>  
+    const navLinks = document.querySelectorAll('nav a');  
+    const sections = document.querySelectorAll('section');  
+
+    navLinks.forEach(link => {  
+        link.addEventListener('click', (e) => {  
+            e.preventDefault();  
+            const target = e.target.getAttribute('href').substring(1);  
+            sections.forEach(section => {  
+                section.style.display = 'none';  
+            });  
+            document.getElementById(target).style.display = 'block';  
+        });  
+    });  
+
+    // Default display  
+    document.getElementById('sr').style.display = 'none';  
+</script>  
+
+</body>  
+</html>
